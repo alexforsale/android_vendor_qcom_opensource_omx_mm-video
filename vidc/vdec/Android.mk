@@ -67,7 +67,7 @@ libmm-vdec-inc          := $(LOCAL_PATH)/inc
 libmm-vdec-inc          += $(OMX_VIDEO_PATH)/vidc/common/inc
 
 libmm-vdec-inc          += $(TARGET_OUT_HEADERS)/mm-core/omxcore
-libmm-vdec-inc          += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#libmm-vdec-inc          += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 #DRM include - Interface which loads the DRM library
 libmm-vdec-inc	        += $(OMX_VIDEO_PATH)/DivxDrmDecrypt/inc
 
@@ -82,7 +82,7 @@ LOCAL_MODULE                    := libOmxVdec
 LOCAL_MODULE_TAGS               := optional
 LOCAL_CFLAGS                    := $(libOmxVdec-def)
 LOCAL_C_INCLUDES                := $(libmm-vdec-inc)
-LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_PRELINK_MODULE    := false
 LOCAL_SHARED_LIBRARIES  := liblog libutils libbinder libcutils
@@ -113,13 +113,13 @@ include $(CLEAR_VARS)
 
 mm-vdec-test-inc    := $(TARGET_OUT_HEADERS)/mm-core/omxcore
 mm-vdec-test-inc    += $(LOCAL_PATH)/inc
-mm-vdec-test-inc    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#mm-vdec-test-inc    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 LOCAL_MODULE                    := mm-vdec-omx-test
 LOCAL_MODULE_TAGS               := optional
 LOCAL_CFLAGS                    := $(libOmxVdec-def)
 LOCAL_C_INCLUDES                := $(mm-vdec-test-inc)
-LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_PRELINK_MODULE      := false
 LOCAL_SHARED_LIBRARIES    := libutils libOmxCore libOmxVdec libbinder
@@ -136,13 +136,13 @@ include $(CLEAR_VARS)
 
 mm-vdec-drv-test-inc    := $(TARGET_OUT_HEADERS)/mm-core/omxcore
 mm-vdec-drv-test-inc    += $(LOCAL_PATH)/inc
-mm-vdec-drv-test-inc    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#mm-vdec-drv-test-inc    += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
 LOCAL_MODULE                    := mm-video-driver-test
 LOCAL_MODULE_TAGS               := optional
 LOCAL_CFLAGS                    := $(libOmxVdec-def)
 LOCAL_C_INCLUDES                := $(mm-vdec-drv-test-inc)
-LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_PRELINK_MODULE            := false
 
 LOCAL_SRC_FILES                 := src/message_queue.c

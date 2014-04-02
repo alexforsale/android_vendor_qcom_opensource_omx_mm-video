@@ -51,7 +51,7 @@ include $(CLEAR_VARS)
 libmm-venc-inc      := $(LOCAL_PATH)/inc
 libmm-venc-inc      += $(OMX_VIDEO_PATH)/vidc/common/inc
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/mm-core/omxcore
-libmm-venc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#libmm-venc-inc      += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 ifeq ($(call is-android-codename,ICECREAM_SANDWICH),true)
 libmm-venc-inc      += $(TOP)/hardware/qcom/media/libstagefrighthw
 libmm-venc-inc      += $(TOP)/hardware/qcom/display/libgralloc
@@ -61,7 +61,7 @@ LOCAL_MODULE                    := libOmxVenc
 LOCAL_MODULE_TAGS               := optional
 LOCAL_CFLAGS                    := $(libmm-venc-def)
 LOCAL_C_INCLUDES                := $(libmm-venc-inc)
-LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_PRELINK_MODULE      := false
 LOCAL_SHARED_LIBRARIES    := liblog libutils libbinder libcutils
@@ -116,8 +116,8 @@ venc-test-inc                   += $(LOCAL_PATH)/inc
 LOCAL_MODULE                    := mm-video-encdrv-test
 LOCAL_MODULE_TAGS               := optional
 LOCAL_C_INCLUDES                := $(venc-test-inc)
-LOCAL_C_INCLUDES                += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+#LOCAL_C_INCLUDES                += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+#LOCAL_ADDITIONAL_DEPENDENCIES   := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_PRELINK_MODULE            := false
 
 LOCAL_SRC_FILES                 := test/video_encoder_test.c
